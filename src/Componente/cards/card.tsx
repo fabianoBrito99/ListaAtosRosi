@@ -139,7 +139,11 @@ const ListaPresente: React.FC = () => {
       <div className={`${styles.container2}`}>
         <div className={styles.animeLeft1}>
           <h3 className={styles.titulo}>
-            <img className={styles.svg} src="/Imagens/logoAtosRosi.svg" alt="" />
+            <img
+              className={styles.svg}
+              src="/Imagens/logoAtosRosi.svg"
+              alt=""
+            />
             <span className={styles.texto}>Lista de Presentes</span>
           </h3>
         </div>
@@ -244,6 +248,19 @@ const ListaPresente: React.FC = () => {
               </div>
             </div>
           )}
+
+          <div className={styles.AjudaFinal} >
+           
+            <p>
+              <Image
+                className={styles.fotoPaleta}
+                src="/Imagens/Ajuda.png"
+                alt=""
+                width={1100}
+                height={500}
+              />
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -3,13 +3,12 @@
   padding: 20px;
   margin: auto;
   max-width: 1200px;
-
 }
 
 .container2 {
   margin-top: -40px;
 }
-.svg{
+.svg {
   width: 30vw;
   height: 30vh;
 }
@@ -47,32 +46,31 @@
   font-size: 1rem;
   margin-top: 10px;
   color: #000;
-  max-height: 3.6em; 
-  line-height: 1.2; 
+  max-height: 3.6em;
+  line-height: 1.2;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; 
-  -webkit-box-orient: vertical; 
-  text-overflow: ellipsis; 
-  word-break: break-word; 
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-break: break-word;
   height: 200px;
 }
-.nomePresente:hover{
+.nomePresente:hover {
   font-size: 0.7rem;
   height: 100px;
-  max-height: 4.8em; 
-  -webkit-line-clamp: 4; 
+  max-height: 4.8em;
+  -webkit-line-clamp: 4;
   cursor: pointer;
 }
 .descricao {
   font-size: 1rem;
   color: #555;
   margin-top: 10px;
-  -webkit-line-clamp: 4; 
+  -webkit-line-clamp: 4;
 }
 
 .botaoEscolher {
- 
   background: linear-gradient(
     to left,
     rgba(174, 0, 255, 0.507),
@@ -120,9 +118,21 @@
   position: relative;
   bottom: 330px;
   right: 10px;
-  
 }
 
+.AjudaFinal {
+  display: flex;
+  margin-top: 30px;
+  width: 53vw;
+  align-items: center;
+  background-color: #f9f2f2d8;
+  border: 1px solid #fcefef;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 0 2px 2px rgba(216, 190, 190, 0.11);
+}
 
 .carrossel {
   position: relative;
@@ -160,14 +170,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
- 
+
   z-index: 1000;
   background-color: #feeae6d0;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
-
 
 .modalContent {
   background-color: white;
@@ -245,7 +254,6 @@
   border-radius: 8px;
 }
 
-
 .animeLeft {
   opacity: 0;
   transform: translateX(-200px);
@@ -254,9 +262,8 @@
 .animeLeft1 {
   opacity: 0;
   transform: translateX(-2000px);
-  animation: animeLeft 0.150s forwards;
+  animation: animeLeft 0.15s forwards;
 }
-
 
 @keyframes animeLeft {
   to {
@@ -266,21 +273,28 @@
 }
 
 @media (max-width: 1200px) {
- 
   .cardPresente {
     width: 238px;
     height: 400px;
   }
+  .AjudaFinal {
+    display: flex;
+    margin-top: 30px;
+    width: 93vw;
+    margin-bottom: 30px;
+  }
+  .AjudaFinal img {
+    width: 90vw;
+    height: 50vh;
+  }
 }
 @media (max-width: 1155px) {
- 
   .cardPresente {
     width: 230px;
     height: 400px;
   }
 }
 @media (max-width: 1130px) {
- 
   .cardPresente {
     width: 218px;
     height: 400px;
@@ -300,33 +314,30 @@
     width: 99vw;
     height: 40vh;
   }
-  .cardPresente{
+  .cardPresente {
     width: 287px;
     height: 400px;
   }
 }
 
 @media (max-width: 1022px) {
- 
   .cardPresente {
     width: 200px;
     height: 400px;
   }
 }
 @media (max-width: 1000px) {
- 
   .cardPresente {
     width: 245px;
     height: 450px;
   }
 }
 @media (max-width: 900px) {
- 
   .cardPresente {
     width: 227px;
     height: 400px;
   }
-  .texto{
+  .texto {
     font-size: 2.5rem;
   }
 }
@@ -352,24 +363,31 @@
   }
 }
 @media (max-width: 800px) {
- 
   .cardPresente {
     width: 200px;
     height: 400px;
   }
-  .icone{
+  .icone {
     bottom: 360px;
   }
 }
 @media (max-width: 720px) {
- 
   .cardPresente {
     width: 180px;
     height: 400px;
   }
+  .AjudaFinal {
+    display: flex;
+    margin-top: 30px;
+    width: 93vw;
+    margin-bottom: 30px;
+  }
+  .AjudaFinal img {
+    width: 90vw;
+    height: 40vh;
+  }
 }
 @media (max-width: 654px) {
- 
   .cardPresente {
     width: 250px;
     height: 400px;
@@ -391,9 +409,9 @@
     width: 230px;
     height: 400px;
   }
-.texto{
-  font-size: 2rem;
-}
+  .texto {
+    font-size: 2rem;
+  }
   .titulo img {
     width: 90vw;
   }
@@ -406,16 +424,25 @@
   .observacao img {
     width: 90vw;
   }
-  .icone{
+  .icone {
     bottom: 380px;
   }
 }
 
 @media (max-width: 550px) {
- 
   .cardPresente {
     width: 200px;
     height: 400px;
+  }
+  .AjudaFinal {
+    display: flex;
+    margin-top: 30px;
+    width: 93vw;
+    margin-bottom: 30px;
+  }
+  .AjudaFinal img {
+    width: 90vw;
+    height: 20vh;
   }
 }
 @media (max-width: 500px) {
@@ -450,41 +477,45 @@
     height: 40vh;
   }
 
-
-
   .observacao img {
     width: 90vw;
     height: 20vh;
   }
-  .observacao p{
+  .observacao p {
     font-size: 0.7rem;
   }
-  .icone{
+  .icone {
     z-index: 10;
     width: 30vw;
     bottom: 180px;
     left: -5px;
     margin-right: 0;
   }
-  .carrossel{
+  .carrossel {
     height: 25vh;
   }
-  .carrossel img{
+  .carrossel img {
     height: 25vh;
   }
-
-
+  .AjudaFinal {
+    display: flex;
+    margin-top: 30px;
+    width: 93vw;
+    margin-bottom: 30px;
+  }
+  .AjudaFinal img {
+    width: 90vw;
+    height: 20vh;
+  }
 }
 
 @media (max-width: 495px) {
- 
   .cardPresente {
     width: 178px;
     height: 400px;
   }
 }
 @media (max-width: 440px) {
- 
   .cardPresente {
     width: 165px;
     height: 400px;
@@ -492,7 +523,6 @@
 }
 
 @media (max-width: 400px) {
- 
   .texto {
     font-size: 1.5rem;
   }
@@ -500,34 +530,31 @@
     width: 150px;
     height: 400px;
   }
-  .nomePresente{
+  .nomePresente {
     font-size: 0.6rem;
   }
 
-  .botaoEscolher{
+  .botaoEscolher {
     font-size: 0.8rem;
     width: 37vw;
-
   }
   .observacao img {
     width: 90vw;
     height: 20vh;
   }
-  .observacao p{
+  .observacao p {
     font-size: 0.7rem;
   }
-  .icone{
+  .icone {
     z-index: 10;
     width: 30vw;
     bottom: 180px;
     left: -5px;
     margin-right: 0;
   }
-
 }
 
 @media (max-width: 380px) {
- 
   .cardPresente {
     width: 140px;
     height: 400px;
@@ -535,7 +562,6 @@
 }
 
 @media (max-width: 350px) {
- 
   .texto {
     font-size: 1.5rem;
   }
@@ -543,33 +569,32 @@
     width: 120px;
     height: 400px;
   }
-  .nomePresente{
+  .nomePresente {
     font-size: 0.6rem;
   }
 
-  .botaoEscolher{
+  .botaoEscolher {
     font-size: 0.8rem;
     width: 37vw;
-
   }
   .observacao img {
     width: 90vw;
     height: 20vh;
   }
-  .observacao p{
+  .observacao p {
     font-size: 0.7rem;
   }
-  .icone{
+  .icone {
     z-index: 10;
     width: 30vw;
     bottom: 180px;
     left: -5px;
     margin-right: 0;
   }
-  .carrossel{
+  .carrossel {
     height: 20vh;
   }
-  .carrossel img{
+  .carrossel img {
     height: 20vh;
   }
 }
