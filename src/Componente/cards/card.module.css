@@ -1,13 +1,18 @@
 .listaContainer {
-  background: #fbecffe1;
+  background: #f3eed12f;
   padding: 20px;
   margin: auto;
   max-width: 1200px;
+
 }
+
 .container2 {
   margin-top: -40px;
 }
-
+.svg{
+  width: 30vw;
+  height: 30vh;
+}
 .titulo {
   font-size: 2rem;
   text-align: center;
@@ -33,7 +38,7 @@
 
 .imagemPresente {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -42,13 +47,27 @@
   font-size: 1rem;
   margin-top: 10px;
   color: #000;
-  height: 90px;
+  max-height: 3.6em; 
+  line-height: 1.2; 
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical; 
+  text-overflow: ellipsis; 
+  word-break: break-word; 
 }
-
+.nomePresente:hover{
+  font-size: 0.7rem;
+  height: 100px;
+  max-height: 4.8em; 
+  -webkit-line-clamp: 4; 
+  cursor: pointer;
+}
 .descricao {
   font-size: 1rem;
   color: #555;
   margin-top: 10px;
+  -webkit-line-clamp: 4; 
 }
 
 .botaoEscolher {
@@ -63,9 +82,6 @@
   cursor: pointer;
   margin-top: 10px;
   border-radius: 5px;
-  
-  
-  
 }
 .icon {
   position: relative;
@@ -86,30 +102,43 @@
 .observacao {
   display: flex;
   align-items: center;
-  background-color: #fff9c4;
-  border: 1px solid #ffeb3b;
-  border-radius: 5px;
+  background-color: #f9f2f2d8;
+  border: 1px solid #fcefef;
+  border-radius: 12px;
   padding: 10px;
   font-size: 14px;
   color: #333;
+  box-shadow: 0 0 2px 2px rgba(216, 190, 190, 0.11);
 }
 .observacao p {
   font-size: 1rem;
   bottom: 20px;
 }
-.fotoAt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.fotoAt img {
-  box-shadow: 0 10px 10px rgba(119, 76, 139, 0.836);
-  border-radius: 8px;
-}
-.fotoFlor {
+.icone {
   position: relative;
-  bottom: 155px;
-  left: -4px;
+  bottom: 330px;
+  right: 10px;
+  
+}
+
+
+.carrossel {
+  position: relative;
+  width: 1200px;
+  height: 500px;
+  top: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  transition: opacity 1s ease-in-out;
+}
+.carrossel {
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 10px 5px 30px 5px #c26969d3;
 }
 
 .titulo {
@@ -117,9 +146,188 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: -160px;
+  margin-top: 60px;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  z-index: 1000;
+  background-color: #feeae6d0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  width: 600px;
+  text-align: center;
+}
+.modalButtons {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+}
+.iconConCan {
+  position: relative;
+  top: 5px;
+}
+.confirmar {
+  color: #ffffff;
+  cursor: pointer;
+  background: #2aa75a;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 255, 128, 0.507),
+    rgba(5, 127, 143, 0.856)
+  );
+  padding: 15px 30px;
+  border-radius: 15px;
+  border: 1px solid #69c287;
+}
+.confirmar:hover {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 173, 86, 0.521),
+    rgba(1, 180, 204, 0.747)
+  );
+  border: 2px solid #00ff95;
+  border-color: rgba(4, 175, 104, 0.507);
+  box-shadow: 0 0 2px 2px rgb(2, 247, 206);
+}
+
+.Cancelar {
+  color: #ffffff;
+  cursor: pointer;
+  background: #a72a2a;
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 0, 0, 0.507),
+    rgba(131, 76, 76, 0.856)
+  );
+  padding: 15px 30px;
+  border-radius: 15px;
+  border: 1px solid #c26969;
+}
+.Cancelar:hover {
+  background-image: linear-gradient(
+    to left,
+    rgba(173, 0, 0, 0.521),
+    rgba(204, 1, 1, 0.747)
+  );
+  border: 2px solid #ff0000;
+  border-color: rgba(175, 4, 4, 0.507);
+  box-shadow: 0 0 2px 2px rgb(247, 2, 2);
+}
+
+.texto {
+  font-family: "satisfy", cursive; /* Fonte cursiva chamativa */
+  font-size: 4rem; /* Tamanho grande */
+  background: linear-gradient(to left, #c79a95, #ce8278);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-200px);
+  animation: animeLeft 0.9s forwards;
+}
+.animeLeft1 {
+  opacity: 0;
+  transform: translateX(-2000px);
+  animation: animeLeft 0.150s forwards;
+}
+
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+@media (max-width: 1200px) {
+ 
+  .cardPresente {
+    width: 238px;
+    height: 400px;
+  }
+}
+@media (max-width: 1155px) {
+ 
+  .cardPresente {
+    width: 230px;
+    height: 400px;
+  }
+}
+@media (max-width: 1130px) {
+ 
+  .cardPresente {
+    width: 218px;
+    height: 400px;
+  }
+}
+@media (max-width: 1100px) {
+  .fotoPaleta {
+    width: 90vw;
+  }
+
+  .carrossel {
+    width: 96vw;
+    height: 40vh;
+    margin: 10px;
+  }
+  .image {
+    width: 99vw;
+    height: 40vh;
+  }
+  .cardPresente{
+    width: 287px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 1022px) {
+ 
+  .cardPresente {
+    width: 200px;
+    height: 400px;
+  }
+}
+@media (max-width: 1000px) {
+ 
+  .cardPresente {
+    width: 245px;
+    height: 450px;
+  }
+}
+@media (max-width: 900px) {
+ 
+  .cardPresente {
+    width: 227px;
+    height: 400px;
+  }
+  .texto{
+    font-size: 2.5rem;
+  }
+}
 @media (max-width: 850px) {
   .listaContainer {
     width: 100vw;
@@ -127,22 +335,49 @@
     margin: 0;
     max-width: 100vw;
   }
-  .fotoAt img {
-    width: 90vw;
+  .carrossel {
+    width: 96vw;
+    height: 40vh;
+    margin: 10px;
+  }
+  .image {
+    width: 99vw;
     height: 40vh;
   }
-  .fotoFlor {
-    position: relative;
-    bottom: 155px;
-    left: 34px;
+
+  .fotoPaleta {
+    width: 90vw;
   }
 }
-
+@media (max-width: 800px) {
+ 
+  .cardPresente {
+    width: 200px;
+    height: 400px;
+  }
+  .icone{
+    bottom: 360px;
+  }
+}
+@media (max-width: 720px) {
+ 
+  .cardPresente {
+    width: 180px;
+    height: 400px;
+  }
+}
+@media (max-width: 654px) {
+ 
+  .cardPresente {
+    width: 250px;
+    height: 400px;
+  }
+}
 @media (max-width: 600px) {
   .listaContainer {
     width: 100vw;
     padding: 0;
-    margin: 0;
+    margin: 3px;
     max-width: 100vw;
   }
   .fotoAt img {
@@ -151,22 +386,188 @@
   }
 
   .cardPresente {
-    width: 210px;
+    width: 230px;
     height: 400px;
   }
-  .fotoFlor{
+.texto{
+  font-size: 2rem;
+}
+  .titulo img {
+    width: 90vw;
+  }
+  .nomePresente {
+    font-size: 16px;
+  }
+  .observacao {
+    width: 93vw;
+  }
+  .observacao img {
+    width: 90vw;
+  }
+  .icone{
+    bottom: 380px;
+  }
+}
+
+@media (max-width: 550px) {
+ 
+  .cardPresente {
+    width: 200px;
+    height: 400px;
+  }
+}
+@media (max-width: 500px) {
+  .listaContainer {
+    width: 100vw;
+    padding: 0;
+    margin: 3px;
+    max-width: 100vw;
+  }
+  .texto {
+    font-size: 2rem;
+  }
+
+  .cardPresente {
+    width: 195px;
+    height: 400px;
+  }
+  .fotoFlor {
     bottom: 155px;
     left: 24px;
-   }
-   .fotoFlor img{
-    width: 10vw;
-    height: 10vh;
-   }
-   .titulo img{
-    width: 90vw;
-   }
-   .nomePresente{
-    font-size: 16px;
-   }
+  }
+  .texto {
+    font-size: 2rem;
+  }
 
+  .nomePresente {
+    font-size: 16px;
+  }
+
+  .observacao img {
+    width: 90vw;
+    height: 40vh;
+  }
+
+
+
+  .observacao img {
+    width: 90vw;
+    height: 20vh;
+  }
+  .observacao p{
+    font-size: 0.7rem;
+  }
+  .icone{
+    z-index: 10;
+    width: 30vw;
+    bottom: 180px;
+    left: -5px;
+    margin-right: 0;
+  }
+  .carrossel{
+    height: 25vh;
+  }
+  .carrossel img{
+    height: 25vh;
+  }
+
+
+}
+
+@media (max-width: 495px) {
+ 
+  .cardPresente {
+    width: 178px;
+    height: 400px;
+  }
+}
+@media (max-width: 440px) {
+ 
+  .cardPresente {
+    width: 165px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+ 
+  .texto {
+    font-size: 1.5rem;
+  }
+  .cardPresente {
+    width: 150px;
+    height: 400px;
+  }
+  .nomePresente{
+    font-size: 0.6rem;
+  }
+
+  .botaoEscolher{
+    font-size: 0.8rem;
+    width: 37vw;
+
+  }
+  .observacao img {
+    width: 90vw;
+    height: 20vh;
+  }
+  .observacao p{
+    font-size: 0.7rem;
+  }
+  .icone{
+    z-index: 10;
+    width: 30vw;
+    bottom: 180px;
+    left: -5px;
+    margin-right: 0;
+  }
+
+}
+
+@media (max-width: 380px) {
+ 
+  .cardPresente {
+    width: 140px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 350px) {
+ 
+  .texto {
+    font-size: 1.5rem;
+  }
+  .cardPresente {
+    width: 120px;
+    height: 400px;
+  }
+  .nomePresente{
+    font-size: 0.6rem;
+  }
+
+  .botaoEscolher{
+    font-size: 0.8rem;
+    width: 37vw;
+
+  }
+  .observacao img {
+    width: 90vw;
+    height: 20vh;
+  }
+  .observacao p{
+    font-size: 0.7rem;
+  }
+  .icone{
+    z-index: 10;
+    width: 30vw;
+    bottom: 180px;
+    left: -5px;
+    margin-right: 0;
+  }
+  .carrossel{
+    height: 20vh;
+  }
+  .carrossel img{
+    height: 20vh;
+  }
 }
