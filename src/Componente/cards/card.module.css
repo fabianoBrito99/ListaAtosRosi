@@ -55,6 +55,7 @@
   -webkit-box-orient: vertical; 
   text-overflow: ellipsis; 
   word-break: break-word; 
+  height: 200px;
 }
 .nomePresente:hover{
   font-size: 0.7rem;
@@ -71,6 +72,7 @@
 }
 
 .botaoEscolher {
+ 
   background: linear-gradient(
     to left,
     rgba(174, 0, 255, 0.507),
