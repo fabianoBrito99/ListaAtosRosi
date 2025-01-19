@@ -34,7 +34,7 @@
   top: 0;
   width: 100%;
   height: 40px;
-  background-color: #817503;
+  background-color: #83483f;
   border-radius: 5px 5px 0 0;
   animation: abrirTopo 1.5s ease-out forwards;
   border-radius: 15px 15px 0px 0;
@@ -45,7 +45,7 @@
   bottom: 0;
   width: 100%;
   height: 110px;
-  background-color: #ccb055;
+  background-color: #c79089;
   border-radius: 0 0 5px 5px;
   z-index: 1;
 }
