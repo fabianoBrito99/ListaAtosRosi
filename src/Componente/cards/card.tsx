@@ -139,10 +139,12 @@ const ListaPresente: React.FC = () => {
       <div className={`${styles.container2}`}>
         <div className={styles.animeLeft1}>
           <h3 className={styles.titulo}>
-            <img
+            <Image
               className={styles.svg}
               src="/Imagens/logoAtosRosi.svg"
               alt=""
+              width={120}
+              height={80}
             />
             <span className={styles.texto}>Lista de Presentes</span>
           </h3>
@@ -176,10 +178,12 @@ const ListaPresente: React.FC = () => {
           {presentes.map((presente) => (
             <div key={presente.id} className={styles.card}>
               <div className={styles.cardPresente}>
-                <img
+                <Image
                   src={presente.imagem}
                   alt={presente.nome}
                   className={styles.imagemPresente}
+                  width={250}
+                  height={150}
                 />
                 <h2 className={styles.nomePresente}>{presente.nome}</h2>
                 <p className={styles.descricao}>R$ {presente.preco}</p>

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styles from "./presenteAnimado.module.css";
+import Image from "next/image";
 
 interface PresenteAnimadoProps {
   imagem: string;
@@ -29,7 +30,13 @@ const PresenteAnimado: React.FC<PresenteAnimadoProps> = ({
         <div className={styles.topo}></div>
         <div className={styles.corpo}></div>
         <div>
-          <img src={imagem} alt={nome} className={styles.imagemPresente} />
+          <Image
+            src={imagem}
+            alt={nome}
+            className={styles.imagemPresente}
+            width={200}
+            height={300}
+          />
         </div>
       </div>
     </div>
