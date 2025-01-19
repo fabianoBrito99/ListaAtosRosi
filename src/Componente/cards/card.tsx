@@ -182,8 +182,8 @@ const ListaPresente: React.FC = () => {
                   src={presente.imagem}
                   alt={presente.nome}
                   className={styles.imagemPresente}
-                  width={250}
-                  height={150}
+                  width={150}
+                  height={196}
                 />
                 <h2 className={styles.nomePresente}>{presente.nome}</h2>
                 <p className={styles.descricao}>R$ {presente.preco}</p>
