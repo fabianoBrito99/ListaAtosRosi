@@ -141,7 +141,7 @@ const ListaPresente: React.FC = () => {
           <h3 className={styles.titulo}>
             <Image
               className={styles.svg}
-              src="/Imagens/logoAtosRosi.svg"
+              src="@/public/Imagens/logoAtosRosi.svg"
               alt=""
               width={120}
               height={80}
