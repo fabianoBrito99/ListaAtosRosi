@@ -4,13 +4,10 @@ import { useEffect, useState } from "react";
 import {
   getFirestore,
   collection,
-  getDocs,
   doc,
   updateDoc,
   onSnapshot,
   Unsubscribe,
-  Firestore,
-  DocumentData,
 } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import styles from "./card.module.css";
