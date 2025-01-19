@@ -2,6 +2,7 @@
 import ListaPresente from "@/Componente/cards/card";
 import { motion } from "framer-motion";
 import styles from "./motion.module.css";
+import Footer from "@/Componente/Footer/footer";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       viewport={{ once: true }}
     >
       <ListaPresente />
+      <Footer />
     </motion.div>
   );
 }
