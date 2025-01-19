@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 //fonte
-const sastify = Satisfy({
+const satisfy = Satisfy({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
@@ -146,7 +146,7 @@ const ListaPresente: React.FC = () => {
               width={120}
               height={80}
             />
-            <span className={styles.texto}>Lista de Presentes</span>
+            <span className={`${satisfy.className} ${styles.texto}`}>Lista de Presentes</span>
           </h3>
         </div>
         <div className={`${styles.observacao} ${styles.animeLeft2}`}>
