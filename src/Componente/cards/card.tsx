@@ -105,13 +105,13 @@ const ListaPresente: React.FC = () => {
   }, []);
 
   const images = [
-    "/Imagens/1.png",
-    "/Imagens/2.png",
-    "/Imagens/3.png",
-    "/Imagens/4.png",
-    "/Imagens/5.png",
-    "/Imagens/6.png",
-    "/Imagens/7.png",
+    "/imagens/1.png",
+    "/imagens/2.png",
+    "/imagens/3.png",
+    "/imagens/4.png",
+    "/imagens/5.png",
+    "/imagens/6.png",
+    "/imagens/7.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -141,7 +141,7 @@ const ListaPresente: React.FC = () => {
           <h3 className={styles.titulo}>
             <Image
               className={styles.svg}
-              src="./Imagens/logoAtosRosi.svg"
+              src="/imagens/logoAtosRosi.svg"
               alt=""
               width={120}
               height={80}
@@ -166,7 +166,7 @@ const ListaPresente: React.FC = () => {
             vontade... <br /> <br />
             <Image
               className={styles.fotoPaleta}
-              src="/Imagens/paleta3.png"
+              src="/imagens/paleta3.png"
               alt=""
               width={1100}
               height={500}
@@ -258,7 +258,7 @@ const ListaPresente: React.FC = () => {
             <p>
               <Image
                 className={styles.fotoPaleta}
-                src="/Imagens/Ajuda.png"
+                src="/imagens/Ajuda.png"
                 alt=""
                 width={1100}
                 height={500}
