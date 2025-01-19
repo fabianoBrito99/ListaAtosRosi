@@ -220,10 +220,11 @@ const ListaPresente: React.FC = () => {
                 <h2>Confirmar Presente</h2>
                 <p>
                   Você tem certeza que deseja presentear{" "}
-                  <strong>{selectedPresente.nome}</strong>? <br /> <br />
-                  Este item desaparecerá da lista de presentes, de forma que
+                  <strong>{selectedPresente.nome}</strong>?<br />
+                  Quantidade Disponivel:<strong>{selectedPresente.quantidade}</strong> <br /> <br />
+                  Este item poderá desaparecerá da lista de presentes, de forma que
                   outra pessoa não poderá vê-lo ou presenteá-lo. Por favor, só
-                  clique em confirmar se você realmente for dar este presente.
+                  clique em confirmar se você realmente for dar este presente.   
                 </p>
                 <div className={styles.modalButtons}>
                   <button
