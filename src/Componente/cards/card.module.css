@@ -120,7 +120,7 @@
 .AjudaFinal {
   display: flex;
   margin-top: 30px;
-  width: 53vw;
+  width: 95%;
   align-items: center;
   background-color: #f9f2f2d8;
   border: 1px solid #fcefef;
@@ -130,6 +130,7 @@
   color: #333;
   box-shadow: 0 0 2px 2px rgba(216, 190, 190, 0.11);
 }
+
 
 .carrossel {
   position: relative;
@@ -268,6 +269,8 @@
     transform: initial;
   }
 }
+
+
 
 @media (max-width: 1200px) {
   .cardPresente {

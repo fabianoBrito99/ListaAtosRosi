@@ -257,7 +257,7 @@ const ListaPresente: React.FC = () => {
            
             <p>
               <Image
-                className={styles.fotoPaleta}
+                
                 src="/imagens/Ajuda.png"
                 alt=""
                 width={1100}
