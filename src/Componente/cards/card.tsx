@@ -7,6 +7,10 @@ import {
   getDocs,
   doc,
   updateDoc,
+  onSnapshot,
+  Unsubscribe,
+  Firestore,
+  DocumentData,
 } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import styles from "./card.module.css";
@@ -45,18 +49,39 @@ const ListaPresente: React.FC = () => {
   );
   const [showAnimation, setShowAnimation] = useState(false);
   // Função para buscar os presentes no Firestore
-  const fetchPresentes = async () => {
+  // Função para buscar os presentes no Firestore em tempo real
+  const fetchPresentes = (): (() => void) | undefined => {
     try {
-      const querySnapshot = await getDocs(collection(db, "Presentes"));
-      const data = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as Presente[];
-      setPresentes(data.filter((presente) => presente.quantidade > 0));
+      const unsubscribe: Unsubscribe = onSnapshot(
+        collection(db, "Presentes"),
+        (snapshot) => {
+          const data = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          })) as Presente[];
+
+          setPresentes(data.filter((presente) => presente.quantidade > 0));
+        }
+      );
+
+      // Retorna a função de cleanup para cancelar a inscrição no snapshot
+      return unsubscribe;
     } catch (error) {
       console.error("Erro ao buscar os dados do Firestore:", error);
+      return undefined; // Retorna undefined em caso de erro
     }
   };
+
+  useEffect(() => {
+    const unsubscribe = fetchPresentes();
+
+    // Cancela a inscrição ao desmontar o componente
+    return () => {
+      if (unsubscribe) {
+        unsubscribe();
+      }
+    };
+  }, []);
 
   // Função para atualizar a quantidade de um presente no Firestore
   const updatePresenteQuantidade = async (
@@ -146,7 +171,9 @@ const ListaPresente: React.FC = () => {
               width={120}
               height={80}
             />
-            <span className={`${satisfy.className} ${styles.texto}`}>Lista de Presentes</span>
+            <span className={`${satisfy.className} ${styles.texto}`}>
+              Lista de Presentes
+            </span>
           </h3>
         </div>
         <div className={`${styles.observacao} ${styles.animeLeft2}`}>
@@ -221,10 +248,12 @@ const ListaPresente: React.FC = () => {
                 <p>
                   Você tem certeza que deseja presentear{" "}
                   <strong>{selectedPresente.nome}</strong>?<br />
-                  Quantidade Disponivel:<strong>{selectedPresente.quantidade}</strong> <br /> <br />
-                  Este item poderá desaparecerá da lista de presentes, de forma que
-                  outra pessoa não poderá vê-lo ou presenteá-lo. Por favor, só
-                  clique em confirmar se você realmente for dar este presente.   
+                  Quantidade Disponivel:
+                  <strong>{selectedPresente.quantidade}</strong> <br /> <br />
+                  Este item poderá desaparecerá da lista de presentes, de forma
+                  que outra pessoa não poderá vê-lo ou presenteá-lo. Por favor,
+                  só clique em confirmar se você realmente for dar este
+                  presente.
                 </p>
                 <div className={styles.modalButtons}>
                   <button
@@ -254,11 +283,9 @@ const ListaPresente: React.FC = () => {
             </div>
           )}
 
-          <div className={styles.AjudaFinal} >
-           
+          <div className={styles.AjudaFinal}>
             <p>
               <Image
-                
                 src="/imagens/Ajuda.png"
                 alt=""
                 width={1100}
