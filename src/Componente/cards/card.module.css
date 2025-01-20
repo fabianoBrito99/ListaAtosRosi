@@ -117,7 +117,7 @@
 }
 .icone {
   position: relative;
-  bottom: 330px;
+  bottom: 290px;
   right: 10px;
 }
 
@@ -387,8 +387,9 @@
     height: 400px;
   }
   .icone {
-    bottom: 360px;
+    bottom: 300px;
   }
+
 }
 @media (max-width: 720px) {
   .cardPresente {
@@ -444,7 +445,7 @@
     width: 90vw;
   }
   .icone {
-    bottom: 380px;
+    bottom: 330px;
   }
 }
 
@@ -506,7 +507,7 @@
   .icone {
     z-index: 10;
     width: 30vw;
-    bottom: 160px;
+    bottom: 130px;
     left: -5px;
     margin-right: 0;
   }
@@ -568,7 +569,7 @@
   .icone {
     z-index: 10;
     width: 30vw;
-    bottom: 166px;
+    bottom: 146px;
     left: -5px;
     margin-right: 0;
   }
@@ -611,7 +612,7 @@
   .icone {
     z-index: 10;
     width: 30vw;
-    bottom: 180px;
+    bottom: 150px;
     left: -5px;
     margin-right: 0;
   }
