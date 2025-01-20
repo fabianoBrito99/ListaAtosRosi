@@ -8,6 +8,7 @@ import {
   updateDoc,
   onSnapshot,
   Unsubscribe,
+  getDoc,
 } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import styles from "./card.module.css";
@@ -80,23 +81,6 @@ const ListaPresente: React.FC = () => {
     };
   }, []);
 
-  // Função para atualizar a quantidade de um presente no Firestore
-  const updatePresenteQuantidade = async (
-    id: string,
-    novaQuantidade: number
-  ) => {
-    try {
-      const presenteRef = doc(db, "Presentes", id);
-      await updateDoc(presenteRef, { quantidade: novaQuantidade });
-      setPresentes((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, quantidade: novaQuantidade } : item
-        )
-      );
-    } catch (error) {
-      console.error("Erro ao atualizar a quantidade no Firestore:", error);
-    }
-  };
 
   const handleEscolherPresente = (presente: Presente) => {
     console.log("Selecionado:", presente);
@@ -106,14 +90,33 @@ const ListaPresente: React.FC = () => {
 
   const confirmPresentear = async () => {
     if (selectedPresente) {
-      const novaQuantidade = selectedPresente.quantidade - 1;
-      await updatePresenteQuantidade(selectedPresente.id, novaQuantidade);
-      setShowAnimation(true);
-      setModalVisible(false);
-      setTimeout(() => {
-        setSelectedPresente(null);
-        window.location.reload(); // Recarrega a página
-      }, 3000);
+      try {
+        // Recarrega os dados do presente diretamente do Firestore para garantir a quantidade mais recente
+        const presenteRef = doc(db, "Presentes", selectedPresente.id);
+        const presenteSnapshot = await getDoc(presenteRef);
+  
+        if (presenteSnapshot.exists()) {
+          const presenteData = presenteSnapshot.data();
+  
+          if (presenteData.quantidade > 0) {
+            // Atualiza a quantidade no Firestore
+            const novaQuantidade = presenteData.quantidade - 1;
+            await updateDoc(presenteRef, { quantidade: novaQuantidade });
+  
+            setShowAnimation(true);
+            setModalVisible(false);
+            setTimeout(() => {
+              setSelectedPresente(null);
+              window.location.reload(); // Recarrega a página
+            }, 3000);
+          } else {
+            setSelectedPresente({ ...selectedPresente, quantidade: 0 });
+          }
+        }
+      } catch (error) {
+        console.error("Erro ao verificar ou atualizar o presente:", error);
+        alert("Ocorreu um erro. Tente novamente.");
+      }
     }
   };
 
@@ -252,10 +255,18 @@ const ListaPresente: React.FC = () => {
                   só clique em confirmar se você realmente for dar este
                   presente.
                 </p>
+
+                {selectedPresente.quantidade <= 0 && (
+                  <p className={styles.mensagemErro}>
+                    Este Presente acabou de ser doado, escolha outro por favor❤️.<br /> <br />
+                    clique em CANCELAR para fechar essa tela.
+                  </p>
+                )}
                 <div className={styles.modalButtons}>
                   <button
                     className={styles.confirmar}
                     onClick={confirmPresentear}
+                    disabled={selectedPresente.quantidade <= 0}
                   >
                     Confirmar{" "}
                     <FaCheck

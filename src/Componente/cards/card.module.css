@@ -262,6 +262,13 @@
   transform: translateX(-2000px);
   animation: animeLeft 0.15s forwards;
 }
+.mensagemErro{
+  background: #fd3636;
+  border: 1px solid #6b1414;
+  padding: 5px;
+  border-radius: 8px;
+  color: #fff;
+}
 
 @keyframes animeLeft {
   to {
@@ -535,9 +542,10 @@
   }
 
   .botaoEscolher {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     width: 37vw;
   }
+ 
   .observacao img {
     width: 90vw;
     height: 20vh;
@@ -558,6 +566,10 @@
   .cardPresente {
     width: 140px;
     height: 400px;
+  }
+  .botaoEscolher {
+    font-size: 0.8rem;
+    width: 37vw;
   }
 }
 
