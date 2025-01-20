@@ -294,12 +294,13 @@ const ListaPresente: React.FC = () => {
           <div className={styles.AjudaFinal}>
             <p>
               <Image
-                src="/imagens/Ajuda.png"
+                src="/imagens/ajudapix.png"
                 alt=""
                 width={1100}
                 height={500}
               />
             </p>
+            <h1 className={styles.chavePix}>Chave pix: 0255518727</h1>
           </div>
         </div>
       </div>
