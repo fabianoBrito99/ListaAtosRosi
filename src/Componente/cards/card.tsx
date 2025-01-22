@@ -300,7 +300,7 @@ const ListaPresente: React.FC = () => {
                 height={500}
               />
             </p>
-            <h1 className={styles.chavePix}>Chave pix: 0255518727</h1>
+            <h1 className={styles.chavePix}>Chave pix: 02555187227</h1>
           </div>
         </div>
       </div>
